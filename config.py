@@ -3,7 +3,7 @@
 config.load_autoconfig()
 
 c.url.default_page = 'about:blank'
-c.url.start_pages = 'bout:blank'
+c.url.start_pages = 'about:blank'
 
 c.aliases = {'q': 'quit', 'w': 'session-save', 'wq': 'quit --save'}
 
@@ -96,7 +96,7 @@ c.tabs.show = 'multiple'
 # qutebrowser`.
 # Type: Dict
 c.url.searchengines = {
-    'DEFAULT': 'https://search.brave.com/search?q={}',
+    'DEFAULT': 'https://google.com/search?q={}',
     'cows': 'https://swisscows.com/web/query?={}',
     'b': 'https://search.brave.com/search?q={}',
     's': 'https://startpage.com/sp/search?q={}',
@@ -130,7 +130,7 @@ c.content.blocking.method = 'both'
 # Text color of the completion widget. May be a single color to use for
 # all columns or a list of three colors, one for each column.
 # Type: List of QtColor, or QtColor
-c.colors.completion.fg = ['white', 'white', 'white']
+c.colors.completion.fg = ['#f1f1f1', '#f1f1f1', '#f1f1f1']
 
 # Background color of the completion widget for odd rows.
 # Type: QssColor
@@ -158,7 +158,7 @@ c.colors.completion.category.border.bottom = '#3f4147'
 
 # Foreground color of the selected completion item.
 # Type: QtColor
-c.colors.completion.item.selected.fg = '#FFFFFF'
+c.colors.completion.item.selected.fg = '#f1f1f1'
 
 # Background color of the selected completion item.
 # Type: QssColor
@@ -166,15 +166,15 @@ c.colors.completion.item.selected.bg = '#404040'
 
 # Foreground color of the matched text in the selected completion item.
 # Type: QtColor
-c.colors.completion.item.selected.match.fg = '#0170bf'
+c.colors.completion.item.selected.match.fg = '#5f87af'
 
 # Foreground color of the matched text in the completion.
 # Type: QtColor
-c.colors.completion.match.fg = '#0170bf'
+c.colors.completion.match.fg = '#5f87af'
 
 # Color of the scrollbar handle in the completion view.
 # Type: QssColor
-c.colors.completion.scrollbar.fg = 'white'
+c.colors.completion.scrollbar.fg = '#f1f1f1'
 
 # Background color for the download bar.
 # Type: QssColor
@@ -190,7 +190,7 @@ c.colors.hints.fg = '#000000'
 
 # Font color for the matched part of hints.
 # Type: QtColor
-c.colors.hints.match.fg = '#ffffff'
+c.colors.hints.match.fg = '#f1f1f1'
 
 # Background color of an info message.
 # Type: QssColor
@@ -202,7 +202,7 @@ c.colors.statusbar.normal.bg = '#000000'
 
 # Foreground color of the statusbar in insert mode.
 # Type: QssColor
-c.colors.statusbar.insert.fg = 'white'
+c.colors.statusbar.insert.fg = '#f1f1f1'
 
 # Background color of the statusbar in insert mode.
 # Type: QssColor
