@@ -10,14 +10,16 @@ c.auto_save.session = True
 c.session.lazy_restore = True
 
 c.editor.command = [
-    "alacritty",
+    "/usr/local/bin/alacritty",
     "-e",
-    "nvim",
+    "/usr/local/bin/nvim",
     "-f",
-    "{file}",
-    "-c",
-    "normal {line}G{column0}1",
+    "{file}"
 ]
+
+config.set("fileselect.handler", "external")
+config.set("fileselect.single_file.command", ['/usr/local/bin/alacritty', '-e', '/usr/local/bin/ranger', '--choosefile', '{}'])
+config.set("fileselect.multiple_files.command", ['/usr/local/bin/alacritty', '-e', '/usr/local/bin/ranger', '--choosefiles', '{}'])
 
 c.url.searchengines = {
     'DEFAULT': 'https://google.com/search?q={}',
