@@ -162,12 +162,13 @@ c.aliases['view-google-cache'] = 'open https://www.google.com/search?q=cache:{ur
 c.aliases['vgc'] = 'open https://www.google.com/search?q=cache:{url}'
 
 # Bindings for normal mode
-('M', 'hint links spawn mpv {hint-url}')
-('Z', 'hint links spawn st -e youtube-dl {hint-url}')
-('t', 'set-cmd-text -s :open -t')
-('xb', 'config-cycle statusbar.show always never')
-('xt', 'config-cycle tabs.show always never')
-('xx', 'config-cycle statusbar.show always never;; config-cycle tabs.show always never')
+nmap(',m', 'spawn mpv {url}')
+nmap(',M', 'hint links spawn mpv {hint-url}')
+nmap(',D', 'hint links spawn st -e youtube-dl {hint-url}')
+nmap('t', 'set-cmd-text -s :open -t')
+nmap('xb', 'config-cycle statusbar.show always never')
+nmap('xt', 'config-cycle tabs.show always never')
+nmap('xx', 'config-cycle statusbar.show always never;; config-cycle tabs.show always never')
 
 # Type: String
 # Valid values:
