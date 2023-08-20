@@ -10,12 +10,12 @@ c.aliases = {'q': 'quit', 'w': 'session-save', 'wq': 'quit --save'}
 #config.set("colors.webpage.darkmode.enabled", True)
 
 config.set('content.cookies.accept', 'all', 'chrome-devtools://*')
-
 config.set('content.cookies.accept', 'all', 'devtools://*')
-
 config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}', 'https://web.whatsapp.com/')
 
 c.downloads.location.directory = '~/Downloads'
+c.content.fullscreen.window = True
+c.window.title_format = '{perc}{current_title}' 
 
 # Which cookies to accept. With QtWebEngine, this setting also controls
 # other features with tracking capabilities similar to those of cookies;
@@ -305,12 +305,3 @@ config.bind('t', 'set-cmd-text -s :open -t')
 config.bind('xb', 'config-cycle statusbar.show always never')
 config.bind('xt', 'config-cycle tabs.show always never')
 config.bind('xx', 'config-cycle statusbar.show always never;; config-cycle tabs.show always never')
-
-# Bindings for cycling through CSS stylesheets from Solarized Everything CSS:
-# https://github.com/alphapapa/solarized-everything-css
-config.bind(',ap', 'config-cycle content.user_stylesheets ~/solarized-everything-css/css/apprentice/apprentice-all-sites.css ""')
-config.bind(',dr', 'config-cycle content.user_stylesheets ~/solarized-everything-css/css/darculized/darculized-all-sites.css ""')
-config.bind(',gr', 'config-cycle content.user_stylesheets ~/solarized-everything-css/css/gruvbox/gruvbox-all-sites.css ""')
-config.bind(',sd', 'config-cycle content.user_stylesheets ~/solarized-everything-css/css/solarized-dark/solarized-dark-all-sites.css ""')
-config.bind(',sl', 'config-cycle content.user_stylesheets ~/solarized-everything-css/css/solarized-light/solarized-light-all-sites.css ""')
-config.bind('M', 'hint links spawn C:\Program Files\MV.exe{hint-url}')
