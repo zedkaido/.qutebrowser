@@ -1,7 +1,10 @@
-#!/usr/bin/env python3
-
 # https://qutebrowser.org/doc/help/settings.html
 config.load_autoconfig()
+
+import os
+os.environ['PATH'] = '/Users/xusr/go/bin:/Users/xusr/.local/go/bin:/Users/xusr/.local/n/bin:/Users/xusr/.local/bin:/Users/xusr/.local/scripts:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/xusr/.nvm/versions/node/v16.17.1/bin:/Users/xusr/go/bin'
+
+c.qt.workarounds.remove_service_workers = True
 
 c.url.default_page = 'about:blank'
 c.url.start_pages = 'about:blank'
@@ -10,16 +13,16 @@ c.auto_save.session = True
 c.session.lazy_restore = True
 
 c.editor.command = [
-    "/usr/local/bin/alacritty",
+    "alacritty",
     "-e",
-    "/usr/local/bin/nvim",
+    "nvim",
     "-f",
     "{file}"
 ]
 
 config.set("fileselect.handler", "external")
-config.set("fileselect.single_file.command", ['/usr/local/bin/alacritty', '-e', '/usr/local/bin/ranger', '--choosefile', '{}'])
-config.set("fileselect.multiple_files.command", ['/usr/local/bin/alacritty', '-e', '/usr/local/bin/ranger', '--choosefiles', '{}'])
+config.set("fileselect.single_file.command", ['alacritty', '-e', 'ranger', '--choosefile', '{}'])
+config.set("fileselect.multiple_files.command", ['alacritty', '-e', 'ranger', '--choosefiles', '{}'])
 
 c.url.searchengines = {
     'DEFAULT': 'https://google.com/search?q={}',
@@ -172,20 +175,6 @@ nmap('xb', 'config-cycle statusbar.show always never')
 nmap('xt', 'config-cycle tabs.show always never')
 nmap('xx', 'config-cycle statusbar.show always never;; config-cycle tabs.show always never')
 
-# Type: String
-# Valid values:
-#   - all: Accept all cookies.
-#   - no-3rdparty: Accept cookies from the same origin only. This is known to break some sites, such as GMail.
-#   - no-unknown-3rdparty: Accept cookies from the same origin only, unless a cookie is already set for the domain. On QtWebEngine, this is the same as no-3rdparty.
-#   - never: Don't accept cookies at all.
-config.set('content.cookies.accept', 'all', 'chrome-devtools://*')
-config.set('content.cookies.accept', 'all', 'devtools://*')
-config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}', 'https://web.whatsapp.com/')
-config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}; rv:71.0) Gecko/20100101 Firefox/71.0', 'https://accounts.google.com/*')
-config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99 Safari/537.36', 'https://*.slack.com/*')
-config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}; rv:71.0) Gecko/20100101 Firefox/71.0', 'https://docs.google.com/*')
-config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}; rv:71.0) Gecko/20100101 Firefox/71.0', 'https://drive.google.com/*')
-
 # Load images automatically in web pages.
 config.set('content.images', True, 'chrome-devtools://*')
 config.set('content.images', True, 'devtools://*')
@@ -195,7 +184,3 @@ config.set('content.javascript.enabled', True, 'chrome-devtools://*')
 config.set('content.javascript.enabled', True, 'devtools://*')
 config.set('content.javascript.enabled', True, 'chrome://*/*')
 config.set('content.javascript.enabled', True, 'qute://*/*')
-
-config.set('content.cookies.accept', 'all', 'chrome-devtools://*')
-config.set('content.cookies.accept', 'all', 'devtools://*')
-config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}', 'https://web.whatsapp.com/')
