@@ -34,6 +34,7 @@ c.url.searchengines = {
     'gl': 'https://gitlab.com/search?search={}',
     'gh': 'https://github.com/search?q={}',
     'h': 'https://hoogle.haskell.org/?hoogle={}',
+    'hp': 'https://hackage.haskell.org/packages/search?terms={}',
     'syn': 'https://powerthesaurus.com/{}/synonyms',
     'y': 'https://invidious.snopyta.org/search?q={}',
     'yt': 'https://www.youtube.com/results?search_query={}',
@@ -108,6 +109,17 @@ c.colors.tabs.selected.even.bg = '#242424'
 c.colors.tabs.pinned.odd.bg = '#202020'
 c.colors.tabs.pinned.even.bg = '#000000'
 c.colors.tabs.pinned.selected.odd.bg = '#242424'
+c.colors.tabs.selected.even.bg = '#fafafa'
+c.colors.tabs.selected.even.fg = '#101010'
+c.colors.tabs.selected.odd.bg = '#fafafa'
+c.colors.tabs.selected.odd.fg = '#101010'
+c.colors.tabs.indicator.start = '#5f87af'
+c.colors.tabs.indicator.stop = '#5f875f' 
+c.colors.tabs.indicator.error = '#870000'
+c.colors.downloads.start.bg = '#5f87af'
+c.colors.downloads.stop.bg = '#5f875f'
+c.colors.statusbar.url.success.http.fg = 'white'
+c.colors.statusbar.url.success.https.fg = '#5f875f'
 
 ## Position of the tab bar.
 ## Type: Position
@@ -117,7 +129,6 @@ c.colors.tabs.pinned.selected.odd.bg = '#242424'
 ##   - left
 ##   - right
 c.tabs.position = 'top'
-c.colors.tabs.pinned.selected.even.bg = '#000000'
 c.fonts.default_family = '"JetBrains Mono"'
 c.fonts.default_size = '16pt'
 c.fonts.completion.entry = '16pt "JetBrains Mono"'
@@ -171,6 +182,7 @@ nmap(',m', 'spawn mpv {url}')
 nmap(',M', 'hint links spawn mpv {hint-url}')
 nmap(',D', 'hint links spawn st -e youtube-dl {hint-url}')
 nmap('t', 'set-cmd-text -s :open -t')
+nmap("e", 'edit-url')
 nmap('xb', 'config-cycle statusbar.show always never')
 nmap('xt', 'config-cycle tabs.show always never')
 nmap('xx', 'config-cycle statusbar.show always never;; config-cycle tabs.show always never')
