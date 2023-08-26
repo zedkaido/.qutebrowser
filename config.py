@@ -187,6 +187,10 @@ nmap('xb', 'config-cycle statusbar.show always never')
 nmap('xt', 'config-cycle tabs.show always never')
 nmap('xx', 'config-cycle statusbar.show always never;; config-cycle tabs.show always never')
 
+# Bindings for insert mode
+imap('<Ctrl-w>','fake-key <Alt-Backspace>')
+imap('<Ctrl-o>','fake-key <Ctrl-Backspace>')
+
 # Load images automatically in web pages.
 config.set('content.images', True, 'chrome-devtools://*')
 config.set('content.images', True, 'devtools://*')
